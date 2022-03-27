@@ -1,0 +1,23 @@
+
+# Jokes-ui pod setup
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alumni-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alumni-ui
+  template:
+    metadata:
+      labels:
+        app: alumni-ui
+    spec:
+      containers:
+        - name: alumni-ui
+          image: hari5115/ps-alumni:latest
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
+
